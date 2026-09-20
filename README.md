@@ -35,6 +35,11 @@ crewai-agent-suite/
 │   └── orchestrator/         # CrewAI オーケストレーター
 │       ├── crewai-orchestrator-v1.jsx # v1（3部門18エージェント）
 │       └── crewai-orchestrator-v2.jsx # v2（4部門24エージェント）
+├── kaikei-local/             # 個人事業主向けローカル会計アプリ（Python / ブラウザUI）
+│   ├── run.py                       # 起動スクリプト（http://127.0.0.1:8765）
+│   ├── app/                         # FastAPI + SQLite（仕訳・証跡・請求書・freee CSV・OCR）
+│   ├── static/                      # 画面（依存なしの HTML/CSS/JS）
+│   └── tests/                       # pytest
 ├── site/                     # 営業サイト
 │   ├── index.html                   # LP + 営業AIチャットボット（Netlifyデプロイ用）
 │   └── crewai-landing.jsx          # React版LP
@@ -76,6 +81,21 @@ crewai-agent-suite/
 | 🗓 スケジュール確認 | 今週の予定取得・表示 |
 | 📑 会議準備 | アジェンダ自動作成 |
 | ☀️ デイリーブリーフ | 毎朝の業務ブリーフィング |
+
+## 💻 ローカル会計アプリ（kaikei-local）
+
+個人事業主の確定申告向けに、PC内だけで動く会計アプリ。詳細は [kaikei-local/README.md](kaikei-local/README.md)。
+
+| 機能 | 内容 |
+|---|---|
+| 🧾 証跡管理 | 領収書・請求書（受領/発行）・明細を画像/PDFで保存し、日付・金額・取引先で検索 |
+| 🤖 OCR仕訳提案 | Claude が画像/PDFから日付・金額・税区分・勘定科目候補を抽出 → 1クリックで仕訳化 |
+| 📒 仕訳帳・請求書 | 内税自動計算、請求書発行→売掛/入金の自動仕訳、印刷/PDF |
+| 📤 freee形式CSV | freee 仕訳帳エクスポートと同一の97列レイアウトで出力（取込も可） |
+
+```bash
+cd kaikei-local && ./start.sh   # Windows は start.bat
+```
 
 ## 技術スタック
 

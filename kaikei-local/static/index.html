@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>kaikei-local 会計帳簿</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">帳</div>
+        <div>
+          <div class="brand-name">kaikei-local</div>
+          <div class="brand-sub" id="brand-sub">個人事業主の会計帳簿</div>
+        </div>
+      </div>
+      <nav id="nav">
+        <a href="#/dashboard" data-route="dashboard">ダッシュボード</a>
+        <a href="#/journal" data-route="journal">仕訳帳</a>
+        <a href="#/evidence" data-route="evidence">証跡（領収書・請求書）</a>
+        <a href="#/invoices" data-route="invoices">請求書の発行</a>
+        <a href="#/reports" data-route="reports">レポート</a>
+        <a href="#/data" data-route="data">CSV出力・取込</a>
+        <a href="#/masters" data-route="masters">勘定科目・取引先</a>
+        <a href="#/settings" data-route="settings">設定</a>
+      </nav>
+      <div class="sidebar-footer">
+        <label>会計年度
+          <select id="year-select"></select>
+        </label>
+        <div class="muted small" id="data-dir"></div>
+      </div>
+    </aside>
+    <main id="main"><div class="loading">読み込み中…</div></main>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast-root"></div>
+  <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>
