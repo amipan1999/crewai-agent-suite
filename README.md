@@ -38,6 +38,10 @@ crewai-agent-suite/
 ├── site/                     # 営業サイト
 │   ├── index.html                   # LP + 営業AIチャットボット（Netlifyデプロイ用）
 │   └── crewai-landing.jsx          # React版LP
+├── worktown/                 # AI WORK TOWN（AWS上の体験パーク＋AIコンサルサイト）
+│   ├── template.yaml               # AWS SAM（CloudFront/S3/Lambda/Bedrock/DynamoDB）
+│   ├── backend/                    # Lambda（Bedrock でAIチームを実行）
+│   └── web/                        # 体験サイト（静的HTML）
 ├── docs/                     # ドキュメント
 │   └── AGENTS.md                    # エージェント一覧
 ├── .gitignore
@@ -86,6 +90,16 @@ crewai-agent-suite/
 - **STT**: Web Speech Recognition API
 - **永続化**: Claude Artifacts Storage API
 - **デプロイ**: Netlify
+
+## AI WORK TOWN（AWS版デモ＋コンサルサイト）
+
+「大人のキッザニア」をテーマに、来場者が上司役になってAIエージェントのチームに実務を任せる体験サイトです。
+AWS（CloudFront + S3 + Lambda + Amazon Bedrock + DynamoDB）にワンコマンドでデプロイできます。
+詳細は [worktown/README.md](worktown/README.md) を参照してください。
+
+```bash
+cd worktown && ./scripts/deploy.sh
+```
 
 ## セットアップ
 

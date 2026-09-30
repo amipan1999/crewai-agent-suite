@@ -1,0 +1,14 @@
+{
+  "name": "worktown-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI WORK TOWN API (Lambda Function URL -> Amazon Bedrock)",
+  "dependencies": {
+    "@anthropic-ai/bedrock-sdk": "^0.34.0"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/client-sns": "^3.0.0"
+  }
+}

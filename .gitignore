@@ -7,3 +7,5 @@ Thumbs.db
 dist/
 build/
 .netlify/
+.aws-sam/
+samconfig.toml

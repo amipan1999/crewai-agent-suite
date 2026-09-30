@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>パビリオン｜AI WORK TOWN</title>
+<meta name="description" content="AIエージェントのチームに仕事を任せる職業体験。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏙️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/town.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="logo-mark">AI</span><span>AI WORK TOWN<small>AIと働く職業体験パーク</small></span></a>
+    <div class="nav-links">
+      <a href="index.html#map-sec">街マップ</a>
+      <a href="pavilion.html?p=consult">AI導入診断</a>
+      <a href="index.html#contact">ご相談</a>
+    </div>
+    <a class="passport-chip" href="index.html#top" title="集めたスタンプ">🎫 <span data-passport-count>0</span></a>
+  </div>
+</nav>
+
+<header class="pv-hero" style="background:var(--c)">
+  <div class="wrap">
+    <a class="back" href="index.html#map-sec">← 街マップにもどる</a>
+    <div class="pv-title">
+      <div class="ico" id="pv-icon" aria-hidden="true"></div>
+      <div>
+        <h1 id="pv-name"></h1>
+        <p id="pv-tagline"></p>
+      </div>
+      <div class="badge-role">本日のあなたの役職<b id="pv-role"></b></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" style="padding-bottom:72px">
+  <div class="tabs" id="tabs" role="tablist" aria-label="ミッション"></div>
+
+  <div class="work">
+    <form class="panel order" id="order-form">
+      <h2>📝 指示書：<span id="mission-title"></span></h2>
+      <div class="scenario" id="scenario"></div>
+      <label for="order-input" id="order-label"></label>
+      <textarea id="order-input" maxlength="3000" style="margin-top:6px"></textarea>
+      <div class="order-actions">
+        <button class="btn btn-primary" id="run" type="submit">👔 AI部下に指示する</button>
+        <button class="btn btn-sm" id="reset-sample" type="button">サンプルに戻す</button>
+        <span class="count" id="count"></span>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px">※ 個人情報・機密情報は入力しないでください。サンプルを書き換えて自社の例で試すのがおすすめです。</p>
+      <div class="error-box" id="error" hidden role="alert"></div>
+    </form>
+
+    <div class="panel" id="crew-panel">
+      <h2>🤖 あなたのAIチーム</h2>
+      <div class="crew" id="crew"></div>
+      <div class="meter" aria-live="polite">
+        <div class="meter-bar"><i id="meter-fill"></i></div>
+        <div class="meter-label"><span id="meter-text"></span><span id="meter-pct"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="result" id="result" hidden>
+    <div class="complete">
+      <div class="big-stamp"><span id="stamp-icon"></span>体験完了</div>
+      <div>
+        <h3>おつかれさまでした、上司さん。</h3>
+        <p>パスポートにスタンプを押しました。この業務、実際の御社でもAIチームに任せられます。</p>
+      </div>
+      <a class="btn btn-sun" href="index.html#contact">御社での導入を相談 →</a>
+    </div>
+
+    <div class="work">
+      <div class="panel">
+        <h2>📦 提出された成果物</h2>
+        <div class="doc" id="deliverable"></div>
+        <div class="order-actions"><button class="btn btn-sm" id="copy" type="button">成果物をコピー</button></div>
+      </div>
+      <div style="display:grid;gap:20px;align-content:start">
+        <div class="panel"><h2>🗂 AIチームの作業ログ</h2><ol class="log" id="log"></ol></div>
+        <div class="panel"><h2>✅ 上司チェックポイント</h2><p style="font-size:13px;color:var(--muted);margin-bottom:10px">AIに任せきりにせず、人が判断すべきところです。</p><ul class="checks" id="checks"></ul></div>
+        <div class="panel"><h2>⏱ 業務インパクト</h2><div class="impact" id="impact"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="font-family:var(--font-display);font-size:20px;margin:48px 0 16px">🗺 ほかのパビリオンへ</h2>
+  <div class="more" id="more"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© AI WORK TOWN — AIエージェント導入コンサルティング</span>
+    <span>AIの出力は参考情報です。重要な判断は専門家にご確認ください。</span>
+  </div>
+</footer>
+
+<script src="data/pavilions.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pavilion.js"></script>
+</body>
+</html>
