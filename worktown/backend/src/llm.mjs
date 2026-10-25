@@ -1,6 +1,6 @@
 import { AnthropicBedrockMantle } from "@anthropic-ai/bedrock-sdk";
 
-const MODEL_ID = process.env.MODEL_ID || "anthropic.claude-opus-5-5";
+const MODEL_ID = process.env.MODEL_ID || "anthropic.claude-sonnet-5-5";
 const EFFORT = process.env.MODEL_EFFORT || "low";
 
 const client = new AnthropicBedrockMantle({

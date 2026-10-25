@@ -7,7 +7,7 @@ Description: >
 Parameters:
   ModelId:
     Type: String
-    Default: anthropic.claude-opus-5-5
+    Default: anthropic.claude-sonnet-5-5
     Description: Bedrock のモデルID（Messages API / bedrock-mantle 経由）
   ModelEffort:
     Type: String

@@ -9,7 +9,7 @@ cd "$(dirname "$0")/.."
 STACK="${STACK:-ai-work-town}"
 REGION="${AWS_REGION:-${AWS_DEFAULT_REGION:-ap-northeast-1}}"
 NOTIFY_EMAIL="${NOTIFY_EMAIL:-}"
-MODEL_ID="${MODEL_ID:-anthropic.claude-opus-5-5}"
+MODEL_ID="${MODEL_ID:-anthropic.claude-sonnet-5-5}"
 # CloudFront → Lambda の検証ヘッダー。毎回作り直し、両者を同時に更新する
 ORIGIN_SECRET="$(openssl rand -hex 24)"
 

@@ -92,7 +92,7 @@ NOTIFY_EMAIL=you@example.com ./scripts/deploy.sh
 |---|---|---|
 | `STACK` | `ai-work-town` | CloudFormation スタック名 |
 | `AWS_REGION` | `ap-northeast-1` | デプロイ先リージョン |
-| `MODEL_ID` | `anthropic.claude-opus-5-5` | Bedrock のモデルID |
+| `MODEL_ID` | `anthropic.claude-sonnet-5-5` | Bedrock のモデルID |
 | `NOTIFY_EMAIL` | （なし） | 相談の通知先メールアドレス |
 
 利用回数の上限や推論の深さ（`ModelEffort`、既定 `low`）は `template.yaml` の Parameters で変更できます。
