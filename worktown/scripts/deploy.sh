@@ -16,6 +16,10 @@ ORIGIN_SECRET="$(openssl rand -hex 24)"
 echo "▶ パビリオン定義を web/data に書き出し"
 node scripts/build-web-data.mjs
 
+# SAM は空の値（NotifyEmail= など）を受け付けないので、指定があるものだけ渡す
+PARAMS=("OriginVerifySecret=${ORIGIN_SECRET}" "ModelId=${MODEL_ID}")
+[ -n "$NOTIFY_EMAIL" ] && PARAMS+=("NotifyEmail=${NOTIFY_EMAIL}")
+
 echo "▶ SAM build & deploy (${STACK} / ${REGION})"
 sam build --template-file template.yaml
 sam deploy \
@@ -24,10 +28,7 @@ sam deploy \
   --resolve-s3 \
   --capabilities CAPABILITY_IAM \
   --no-fail-on-empty-changeset \
-  --parameter-overrides \
-    "OriginVerifySecret=${ORIGIN_SECRET}" \
-    "NotifyEmail=${NOTIFY_EMAIL}" \
-    "ModelId=${MODEL_ID}"
+  --parameter-overrides "${PARAMS[@]}"
 
 output() {
   aws cloudformation describe-stacks --stack-name "$STACK" --region "$REGION" \
