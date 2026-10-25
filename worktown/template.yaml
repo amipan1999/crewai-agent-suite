@@ -68,7 +68,6 @@ Resources:
       Architectures: [arm64]
       MemorySize: 512
       Timeout: 120
-      ReservedConcurrentExecutions: 20
       Environment:
         Variables:
           MODEL_ID: !Ref ModelId
